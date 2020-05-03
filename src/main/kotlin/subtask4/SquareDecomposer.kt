@@ -21,7 +21,7 @@ class SquareDecomposer {
                 return null
             } else {
 
-                while (double(number) - resultList.map { it * it }.sum() > 98) {
+                while (double(number) - resultList.map { it * it }.sum() > 90) {
                     if (double(number) - resultList.map { it * it }.sum() < 1500)
                         resultList.add(Math.sqrt((double(number) - resultList.map { it * it }
                             .sum()).toDouble()).toInt() - 1)
