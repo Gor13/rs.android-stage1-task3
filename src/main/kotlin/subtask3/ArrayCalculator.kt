@@ -23,7 +23,7 @@ class ArrayCalculator {
                 count--
                 var multipliers = 1
                 for (a in arr.take(numberOfItems)){
-                    multipliers *= a.toInt()
+                    multipliers *= a
                 }
                 set.add(multipliers)
             }
@@ -34,8 +34,5 @@ class ArrayCalculator {
         return result
     }
 
-    private operator fun Int.times(a: Any): Int {
-        return if (a is Int) a else 0
-    }
 
 }
