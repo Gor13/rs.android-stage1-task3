@@ -21,7 +21,7 @@ class SquareDecomposer {
                 return null
             } else {
 
-                while (double(number) - resultList.map { it * it }.sum() > 121) {
+                while (double(number) - resultList.map { it * it }.sum() > 98) {
                     if (double(number) - resultList.map { it * it }.sum() < 1500)
                         resultList.add(Math.sqrt((double(number) - resultList.map { it * it }
                             .sum()).toDouble()).toInt() - 1)
@@ -38,7 +38,7 @@ class SquareDecomposer {
                 }
 
 
-                var count = 5
+                var count = 100
                 while (count > 0) {
                     Collections.shuffle(list)
                     val curentList = list.take(Random.nextInt(1, list.size)).map { it * it }
@@ -52,8 +52,11 @@ class SquareDecomposer {
                 lastList.add(0)
 
                 for (list in listOfLists) {
-                    if (lastList.sum() < list.sum())
+                    if (lastList.sum() < list.sum()){
                         lastList = list.toMutableList()
+                    } else if (lastList.sum() == list.sum() && lastList.size > list.size){
+                        lastList = list.toMutableList()
+                    }
                 }
 
                 lastList = lastList.map { Math.sqrt(it.toDouble()).toInt() }.toMutableList()
