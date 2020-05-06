@@ -28,6 +28,7 @@ class FullBinaryTreesTests {
         assertEquals("[]", solution.stringForNodeCount(4))
     }
 
+
     @Test
     fun test4() {
         val output = sanitize(solution.stringForNodeCount(7))
